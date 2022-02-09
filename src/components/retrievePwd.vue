@@ -143,92 +143,113 @@ export default {
     height: 100vh;
     background-image: url(../assets/index3.jpg);
     background-position: center;
+    -o-background-size: cover;
     background-size: cover;
     background-attachment: fixed;
     background-clip: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     position: relative;
     .title {
         position: absolute;
-        top: 20px;
-        left: 0px;
+        top: 20rem;
+        left: 0rem;
         span {
             color: white;
-            padding: 20px;
-            font-size: 30px;
+            padding: 20rem;
+            font-size: 30rem;
             font-weight: 400;
         }
     }
     .form {
-        width: 550px;
-        height: 620px;
+        width: 550rem;
+        height: 620rem;
         background-color: rgba(255, 255, 255, 0.856);
-        box-shadow: 0px 0px 20px rgba(100, 100, 100, 0.5);
-        padding: 50px 56px 60px;
+        -webkit-box-shadow: 0rem 0rem 20rem rgba(100, 100, 100, 0.5);
+        box-shadow: 0rem 0rem 20rem rgba(100, 100, 100, 0.5);
+        padding: 50rem 56rem 60rem;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
         box-sizing: border-box;
-        border-radius: 6px;
+        border-radius: 6rem;
 
         .login-title {
             font-weight: 500;
-            font-size: 26px;
+            font-size: 26rem;
             color: #323233;
             cursor: default;
         }
         .zhanghao {
-            width: 438px;
-            height: 48px;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #bb8888;
+            width: 438rem;
+            height: 48rem;
+            margin-bottom: 30rem;
+            border-bottom: 2rem solid #bb8888;
             #zhanghao {
-                padding: 10px 10px 0px 10px;
+                padding: 10rem 10rem 0rem 10rem;
                 background: none;
                 outline: none;
                 border: none;
-                font-size: 16px;
+                font-size: 16rem;
                 :focus {
                     border: none;
                 }
             }
             input::-moz-placeholder {
                 color: #989999;
-                font-size: 16px;
+                font-size: 16rem;
             }
         }
         .password {
-            width: 438px;
-            height: 48px;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #bb8888;
+            width: 438rem;
+            height: 48rem;
+            margin-bottom: 30rem;
+            border-bottom: 2rem solid #bb8888;
             position: relative;
             #password {
-                padding: 10px;
+                padding: 10rem;
                 background: none;
                 outline: none;
                 border: none;
-                font-size: 16px;
+                font-size: 16rem;
                 :focus {
                     border: none;
                 }
             }
             input::-moz-placeholder {
                 color: #989999;
-                font-size: 16px;
+                font-size: 16rem;
             }
             a {
                 text-decoration: none;
                 color: #a67c51;
                 position: absolute;
-                right: 18px;
+                right: 18rem;
                 top: 50%;
+                -webkit-transform: translateY(-50%);
+                -moz-transform: translateY(-50%);
+                -o-transform: translateY(-50%);
                 transform: translateY(-50%);
-                width: 84px;
-                font-size: 16px;
-                height: 14px;
-                line-height: 14px;
-                border-left: 1px solid #bb8888;
-                padding-left: 18px;
+                width: 84rem;
+                font-size: 16rem;
+                height: 14rem;
+                line-height: 14rem;
+                border-left: 1rem solid #bb8888;
+                padding-left: 18rem;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
                 box-sizing: border-box;
                 white-space: nowrap;
                 cursor: pointer;
@@ -251,16 +272,16 @@ export default {
             }
         }
         .submit {
-            margin-top: 50px;
-            width: 438px;
-            height: 48px;
+            margin-top: 50rem;
+            width: 438rem;
+            height: 48rem;
             border-style: none;
             cursor: unset !important;
             pointer-events: unset;
             border-color: #ebedf0;
             background-color: #bb8888;
-            border-radius: 20px;
-            font-size: 18px;
+            border-radius: 20rem;
+            font-size: 18rem;
             font-weight: 300;
             color: white;
         }
@@ -268,26 +289,31 @@ export default {
             background-color: none;
         }
         .other {
-            width: 438px;
-            height: 48px;
+            width: 438rem;
+            height: 48rem;
             position: relative;
             #login {
                 position: absolute;
-                left: -15px;
+                left: -15rem;
             }
             a {
                 text-align: right;
                 text-decoration: none;
                 color: #a67c51;
                 position: absolute;
-                right: 60px;
+                right: 60rem;
                 top: 50%;
+                -webkit-transform: translateY(50%);
+                -moz-transform: translateY(50%);
+                -o-transform: translateY(50%);
                 transform: translateY(50%);
-                width: 84px;
-                font-size: 16px;
-                height: 14px;
-                line-height: 14px;
-                padding-left: 18px;
+                width: 84rem;
+                font-size: 16rem;
+                height: 14rem;
+                line-height: 14rem;
+                padding-left: 18rem;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
                 box-sizing: border-box;
                 white-space: nowrap;
                 cursor: pointer;
@@ -312,43 +338,85 @@ export default {
     }
     .info {
         font-family: "FangSong", Courier, monospace;
-        margin-left: 20px;
+        margin-left: 20rem;
         position: relative;
-        width: 382px;
-        height: 520px;
-        border-radius: 6px;
+        width: 382rem;
+        height: 520rem;
+        border-radius: 6rem;
         background-color: rgba(255, 255, 255, 0.856);
-        box-shadow: 0px 0px 20px rgba(100, 100, 100, 0.5);
+        -webkit-box-shadow: 0rem 0rem 20rem rgba(100, 100, 100, 0.5);
+        box-shadow: 0rem 0rem 20rem rgba(100, 100, 100, 0.5);
         .title {
-            width: 382px;
+            width: 382rem;
             height: auto;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -moz-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -moz-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 20rem;
             span {
-                padding: 20px;
-                font-size: 30px;
+                padding: 20rem;
+                font-size: 30rem;
                 font-weight: 400;
-                border-bottom: 2px solid #bb8888;
+                border-bottom: 2rem solid #bb8888;
             }
         }
         .infotoken {
-            font-size: 20px;
+            font-size: 20rem;
             font-weight: 400;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -moz-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -moz-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            -moz-box-orient: vertical;
+            -moz-box-direction: normal;
+            -ms-flex-direction: column;
             flex-direction: column;
-            margin-top: 100px;
+            margin-top: 100rem;
             background-image: url(../assets/logo.png);
             background-repeat: no-repeat;
             background-position: 130% 100%;
+            -o-background-size: 40% auto;
             background-size: 40% auto;
         }
         .infotoken > span {
-            margin-bottom: 20px;
+            margin-bottom: 20rem;
         }
     }
 }
+// @media only screen and (max-width: 701px) {
+//     .login {
+//         .form {
+//             -webkit-transform: scale(2, 2);
+//             -moz-transform: scale(2, 2);
+//             -o-transform: scale(2, 2);
+//             transform: scale(2, 2);
+//         }
+//     }
+// }
 </style>

@@ -1,72 +1,70 @@
 <template>
     <div class="main">
-        <div class="content">
-            <h1>修改菜品信息</h1>
-            <el-form
-                :model="ruleForm"
-                :rules="rules"
-                ref="ruleForm"
-                label-width="100px"
-                class="demo-ruleForm"
-                size="40"
-            >
-                <el-form-item label="菜品名" prop="dishName" id="dishName">
-                    <el-input v-model="ruleForm.dishName"></el-input>
-                </el-form-item>
-                <!-- <el-form-item label="价格" prop="dishPrice">
+        <main-title title="修改菜品"></main-title>
+        <el-form
+            :model="ruleForm"
+            :rules="rules"
+            ref="ruleForm"
+            label-width="100px"
+            class="demo-ruleForm"
+            size="40"
+        >
+            <el-form-item label="菜品名" prop="dishName" id="dishName">
+                <el-input v-model="ruleForm.dishName"></el-input>
+            </el-form-item>
+            <!-- <el-form-item label="价格" prop="dishPrice">
                     <el-input v-model="ruleForm.dishPrice"></el-input>
                 </el-form-item> -->
 
-                <el-form-item
-                    label="价格"
-                    prop="dishPrice"
-                    :rules="[
-                        { required: true, message: '价格不能为空' },
-                        { type: 'number', message: '价格必须为数字值' },
-                    ]"
+            <el-form-item
+                label="价格"
+                prop="dishPrice"
+                :rules="[
+                    { required: true, message: '价格不能为空' },
+                    { type: 'number', message: '价格必须为数字值' },
+                ]"
+            >
+                <el-input
+                    type="age"
+                    v-model.number="ruleForm.dishPrice"
+                    autocomplete="off"
+                ></el-input>
+            </el-form-item>
+            <el-form-item label="分类" prop="classId">
+                <el-select
+                    v-model="getStatus"
+                    placeholder="请选择"
+                    clearable="turn"
+                    @change="changeClass"
                 >
-                    <el-input
-                        type="age"
-                        v-model.number="ruleForm.dishPrice"
-                        autocomplete="off"
-                    ></el-input>
-                </el-form-item>
-                <el-form-item label="分类" prop="classId">
-                    <el-select
-                        v-model="getStatus"
-                        placeholder="请选择"
-                        clearable="turn"
-                        @change="changeClass"
+                    <el-option
+                        v-for="item in options"
+                        :key="item.getStatus"
+                        :label="item.className"
+                        :value="item.classId"
+                        :file-list="fileList"
                     >
-                        <el-option
-                            v-for="item in options"
-                            :key="item.getStatus"
-                            :label="item.className"
-                            :value="item.classId"
-                            :file-list="fileList"
-                        >
-                        </el-option>
-                    </el-select>
-                    <el-button type="primary" @click="open" plain>添加类</el-button>
-                </el-form-item>
-                <el-form-item label="图片" prop="imageUrl">
-                    <el-upload
-                        :action="uploadURL"
-                        list-type="picture"
-                        :headers="headerObj"
-                        :on-success="handleSuccess"
-                    >
-                        <el-button size="small" type="primary">点击上传</el-button>
-                    </el-upload>
-                </el-form-item>
-                <el-form-item class="btn">
-                    <el-button type="primary" :plain="true" @click="submitForm('ruleForm')"
-                        >立即创建</el-button
-                    >
-                    <el-button @click="resetForm('ruleForm')">重置</el-button>
-                </el-form-item>
-            </el-form>
-        </div>
+                    </el-option>
+                </el-select>
+                <el-button type="primary" @click="open" plain>添加类</el-button>
+            </el-form-item>
+            <el-form-item label="图片" prop="imageUrl">
+                <el-upload
+                    :action="uploadURL"
+                    list-type="picture"
+                    :headers="headerObj"
+                    :on-success="handleSuccess"
+                >
+                    <el-button size="small" type="primary">点击上传</el-button>
+                </el-upload>
+            </el-form-item>
+            <el-form-item class="btn">
+                <el-button type="primary" :plain="true" @click="submitForm('ruleForm')"
+                    >立即修改</el-button
+                >
+                <el-button @click="resetForm('ruleForm')">重置</el-button>
+            </el-form-item>
+        </el-form>
     </div>
 </template>
 
@@ -259,36 +257,20 @@ export default {
 
 <style lang="less" scoped>
 .main {
-    height: 100%;
-    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    align-items: flex-start;
     background-color: white;
-    .content {
-        width: 600px;
-        background-color: white;
-        h1 {
-            font-family: "STKaiti", Courier, monospace;
-            text-align: center;
-            margin-top: 40px;
-            font-size: 30px;
-            font-weight: 400;
+    .el-form {
+        .el-input__inner {
+            width: 420rem;
         }
-        .el-form {
-            padding: 40px;
-            .el-input__inner {
-                width: 420px;
-            }
-            .el-select {
-                margin-right: 20px;
-            }
-
-            .btn {
-                text-align: center;
-                margin-left: -100px;
-            }
+        .el-select {
+            margin-right: 20rem;
+            margin-bottom: 20rem;
+        }
+        .btn {
+            text-align: center;
+            margin-left: -100rem;
         }
     }
 }

@@ -1,8 +1,8 @@
 <template>
     <div class="ordertable">
-        <h1>菜品信息</h1>
-        <el-table :data="tableData" style="width: 900px" max-height="" height="">
-            <el-table-column label="图片" width="180">
+        <main-title title="菜品信息"></main-title>
+        <el-table :data="tableData" style="width: " max-height="" height="">
+            <el-table-column label="图片" width="">
                 <template #default="scope">
                     <div class="block">
                         <el-avatar
@@ -17,22 +17,22 @@
                     ></image> -->
                 </template>
             </el-table-column>
-            <el-table-column label="菜品名" width="180">
+            <el-table-column label="菜品名" width="">
                 <template #default="scope">
                     <span style="margin-left: 10px">{{ scope.row.dishName }}</span>
                 </template>
             </el-table-column>
-            <el-table-column label="菜品分类" width="180">
+            <el-table-column label="菜品分类" width="">
                 <template #default="scope">
                     <span style="margin-left: 10px">{{ scope.row.className }}</span>
                 </template>
             </el-table-column>
-            <el-table-column label="菜品价格" width="180">
+            <el-table-column label="菜品价格" width="">
                 <template #default="scope">
                     <span style="margin-left: 10px">{{ scope.row.dishPrice }}</span>
                 </template>
             </el-table-column>
-            <el-table-column label="操作">
+            <el-table-column label="操作" width="160rem">
                 <template #default="scope">
                     <el-button size="mini" @click="handleEdit(scope.$index, scope.row)"
                         >编辑</el-button
@@ -91,9 +91,8 @@ export default {
 
 <style lang="less" scoped>
 .ordertable {
-    margin: 20px 20px 0 200px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
 }
 </style>

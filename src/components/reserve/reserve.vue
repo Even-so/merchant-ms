@@ -1,23 +1,23 @@
 <template>
     <div class="ordertable">
-        <h1>预定管理</h1>
-        <el-table :data="reserveList" style="width: 900px">
-            <el-table-column label="用户" width="180">
+        <main-title title="预定管理"></main-title>
+        <el-table :data="reserveList" style="width: ">
+            <el-table-column label="用户" width="">
                 <template #default="scope">
                     <span style="margin-left: 10px">{{ scope.row.userId }}</span>
                 </template>
             </el-table-column>
-            <el-table-column label="时间" width="180">
+            <el-table-column label="时间" width="">
                 <template #default="scope">
                     <span style="margin-left: 10px">{{ scope.row.time }}</span>
                 </template>
             </el-table-column>
-            <el-table-column label="人数" width="180">
+            <el-table-column label="人数" width="">
                 <template #default="scope">
                     <span style="margin-left: 10px">{{ scope.row.peopleNum }}</span>
                 </template>
             </el-table-column>
-            <el-table-column label="操作">
+            <el-table-column label="操作" width="180rem">
                 <template #default="scope">
                     <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">{{
                         scope.row.status == 2 ? "已同意" : "同意"
@@ -81,9 +81,8 @@ export default {
 
 <style lang="less" scoped>
 .ordertable {
-    margin: 20px 20px 0 200px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
 }
 </style>

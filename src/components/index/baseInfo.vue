@@ -1,7 +1,7 @@
 <template>
     <div class="main">
+        <main-title title="基本信息"></main-title>
         <div class="content">
-            <h1>基本信息</h1>
             <el-form
                 :model="ruleForm"
                 :rules="rules"
@@ -30,20 +30,6 @@
                 <el-form-item label="打包费/元" prop="packingFee">
                     <el-input v-model="ruleForm.packingFee"></el-input>
                 </el-form-item>
-                <!-- <el-form-item
-                    label="打包费/元"
-                    prop="packingFee"
-                    :rules="[
-                        { required: true, message: '打包费不能为空' },
-                        { type: 'number', message: '打包费必须为数字值' },
-                    ]"
-                >
-                    <el-input
-                        type="age"
-                        v-model.number="ruleForm.packingFee"
-                        autocomplete="off"
-                    ></el-input>
-                </el-form-item> -->
                 <el-form-item label="营业时间" required>
                     <el-time-picker
                         is-range
@@ -53,6 +39,9 @@
                         start-placeholder="开始时间"
                         end-placeholder="结束时间"
                         placeholder="选择时间范围"
+                        editable
+                        size="1000px"
+                        align="center"
                     >
                     </el-time-picker>
                 </el-form-item>
@@ -88,6 +77,7 @@ export default {
         return {
             map: {},
             datevalue: [new Date(2016, 9, 10, 10, 40, 10), new Date(2016, 9, 10, 16, 40, 20)],
+            value2: new Date(2016, 9, 10, 18, 40),
             ruleForm: {
                 name: "",
                 adddess: "",
@@ -308,52 +298,65 @@ export default {
 
 <style lang="less" scoped>
 .main {
-    margin-top: 80px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    // flex-direction: column;
+    align-items: flex-start;
     background-color: white;
     .content {
-        width: 600px;
+        width: 60%;
         background-color: white;
-        // box-shadow: 0px 0px 5px rgba(100, 100, 100, 0.5);
-        h1 {
-            font-family: "STKaiti", Courier, monospace;
-            text-align: center;
-            margin-top: 100px;
-            font-size: 30px;
-            font-weight: 400;
-        }
         .el-form {
             padding: 0px;
             .sumbit {
-                margin-bottom: 5px;
-                margin-top: -15px;
+                margin-bottom: 5rem;
+                margin-top: -15rem;
                 display: flex;
                 justify-content: flex-end;
             }
             .el-input__inner {
-                width: 420px;
+                width: 420rem;
             }
-
+            //地图
             #container {
-                margin-left: 100px;
+                margin-left: 100rem;
                 position: relative;
-                margin-bottom: 20px;
+                margin-bottom: 20rem;
                 z-index: 1;
                 #marker {
                     position: absolute;
-                    left: 50%;
-                    top: 48%;
-                    width: 20px;
-                    height: 20px;
+                    left: 49%;
+                    top: 49%;
+                    width: 20rem;
+                    height: 20rem;
                 }
             }
 
             .btn {
                 text-align: center;
-                margin-left: -100px;
+                margin-left: -100rem;
+            }
+        }
+    }
+}
+.main .content .el-form .el-input__inner[data-v-27b9a7cc] {
+    // width: 667.517rem;
+    width: 100% !important;
+}
+//时间选择器的框框
+.el-time-range-picker {
+    // width: 500rem;
+    width: 100%;
+}
+@media only screen and (max-width: 701px) {
+    .main {
+        display: flex;
+        align-items: center;
+        .content {
+            width: 98%;
+            .el-form {
+                .el-input__inner[data-v-13820d4f] {
+                    width: 100% !important;
+                }
             }
         }
     }

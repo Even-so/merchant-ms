@@ -1,22 +1,13 @@
 <template>
     <div class="main">
+        <main-title title="图片"></main-title>
         <div class="content">
-            <h1>图片设置</h1>
             <div class="imgcontent">
                 <div class="img touxiang">
                     <label for="">头像上传</label>
                     <div>
+                        <uploads-img></uploads-img>
                         <!-- <el-upload
-                            class="avatar-uploader"
-                            action="https://jsonplaceholder.typicode.com/posts/"
-                            :show-file-list="false"
-                            :on-success="handleAvatarSuccess"
-                            :before-upload="beforeAvatarUpload"
-                        >
-                            <img v-if="imageUrl" :src="imageUrl" class="avatar" />
-                            <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-                        </el-upload> -->
-                        <el-upload
                             :action="uploadURL"
                             list-type="picture"
                             :headers="headerObj"
@@ -24,12 +15,13 @@
                             :before-upload="beforeAvatarUpload"
                         >
                             <el-button size="small" type="primary">点击上传</el-button>
-                        </el-upload>
+                        </el-upload> -->
                     </div>
                 </div>
                 <div class="img lunbotu1">
                     <label for="">轮播图1</label>
                     <div>
+                        <uploads-img></uploads-img>
                         <!-- <el-upload
                 class="avatar-uploader"
                 action="https://jsonplaceholder.typicode.com/posts/"
@@ -40,7 +32,7 @@
                 <img v-if="imageUrl1" :src="imageUrl1" class="avatar" />
                 <i v-else class="el-icon-plus avatar-uploader-icon"></i>
               </el-upload> -->
-                        <el-upload
+                        <!-- <el-upload
                             :action="uploadURL"
                             list-type="picture"
                             :headers="headerObj"
@@ -48,12 +40,13 @@
                             :before-upload="beforeAvatarUpload"
                         >
                             <el-button size="small" type="primary">点击上传</el-button>
-                        </el-upload>
+                        </el-upload> -->
                     </div>
                 </div>
                 <div class="img lunbotu2">
                     <label for="">轮播图2</label>
                     <div>
+                        <uploads-img></uploads-img>
                         <!-- <el-upload
                                 class="avatar-uploader"
                                 action="https://jsonplaceholder.typicode.com/posts/"
@@ -64,7 +57,7 @@
                                 <img v-if="imageUrl2" :src="imageUrl2" class="avatar" />
                                 <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                             </el-upload> -->
-                        <el-upload
+                        <!-- <el-upload
                             :action="uploadURL"
                             list-type="picture"
                             :headers="headerObj"
@@ -72,12 +65,13 @@
                             :before-upload="beforeAvatarUpload"
                         >
                             <el-button size="small" type="primary">点击上传</el-button>
-                        </el-upload>
+                        </el-upload> -->
                     </div>
                 </div>
                 <div class="img lunbotu3">
                     <label for="">轮播图3</label>
                     <div>
+                        <uploads-img></uploads-img>
                         <!-- <el-upload
                                 class="avatar-uploader"
                                 action="https://jsonplaceholder.typicode.com/posts/"
@@ -88,7 +82,7 @@
                                 <img v-if="imageUrl3" :src="imageUrl3" class="avatar" />
                                 <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                             </el-upload> -->
-                        <el-upload
+                        <!-- <el-upload
                             :action="uploadURL"
                             list-type="picture"
                             :headers="headerObj"
@@ -96,7 +90,7 @@
                             :before-upload="beforeAvatarUpload"
                         >
                             <el-button size="small" type="primary">点击上传</el-button>
-                        </el-upload>
+                        </el-upload> -->
                     </div>
                 </div>
             </div>
@@ -105,7 +99,9 @@
 </template>
 
 <script>
+import uploadsImg from "../uploadsImg.vue";
 export default {
+    components: { uploadsImg },
     data() {
         return {
             //图片请求地址
@@ -174,19 +170,10 @@ export default {
     height: 100%;
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     background-color: white;
     .content {
-        h1 {
-            font-family: "STKaiti", Courier, monospace;
-            text-align: center;
-            margin-top: 50px;
-            margin-bottom: 50px;
-
-            font-size: 30px;
-            font-weight: 400;
-        }
         .imgcontent {
             display: flex;
             width: 100%;
@@ -234,6 +221,16 @@ export default {
             width: 178px;
             height: 178px;
             display: block;
+        }
+    }
+}
+@media only screen and (max-width: 701px) {
+    .main {
+        .content {
+            .imgcontent {
+                flex-direction: column;
+                margin: 0;
+            }
         }
     }
 }

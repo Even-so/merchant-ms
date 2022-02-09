@@ -1,9 +1,10 @@
 <template>
     <div class="content">
-        <el-descriptions class="margin-top" title="订单详情" :column="2" :size="size">
-            <template #extra>
-                <el-button type="primary" size="small" @click="goback">返回</el-button>
-            </template>
+        <div class="head">
+            <main-title title="订单信息"></main-title>
+            <el-button type="primary" size="small" @click="goback">返回</el-button>
+        </div>
+        <el-descriptions class="margin-top" title="" :column="2" :size="size">
             <el-descriptions-item label="订单编号"> {{ orderInfo.orderId }} </el-descriptions-item>
             <el-descriptions-item label="购买者"> {{ userName }} </el-descriptions-item>
             <el-descriptions-item label="桌号"> {{ orderInfo.tableNumber }} </el-descriptions-item>
@@ -89,9 +90,30 @@ export default {
 
 <style lang="less" scoped>
 .content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    .head {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .el-button {
+            height: 35.6px;
+            font-size: 12px;
+        }
+    }
     .el-descriptions {
-        margin: 30px;
         margin-bottom: 50px;
+    }
+}
+@media only screen and (max-width: 1144px) {
+    .content {
+        .head {
+            .el-button {
+                height: 25.7px;
+                font-size: 9px;
+            }
+        }
     }
 }
 </style>

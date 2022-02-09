@@ -30,6 +30,13 @@ Vue.prototype.$http = axios;
 
 Vue.config.productionTip = false;
 
+//全局引入maintitle组件
+import MainTitle from "./components/main-title.vue";
+Vue.component("MainTitle", MainTitle);
+
+//全局引入uploadsImg组件
+import uploadsImg from "./components/uploadsImg.vue";
+Vue.component("uploadsImg", uploadsImg);
 new Vue({
     router,
     store,

@@ -4,11 +4,20 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+  <meta name="viewport"
+    content="initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, user-scalable=no">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=100"> -->
+  <!-- 使用IE兼容内核->解决360、夸克浏览器样式混乱问题 -->
+  <!-- <meta name="renderer" content="webkit"> -->
+  <meta name="renderer" content="ie-stand">
+  <!-- <meta name=renderer content=ie-comp> -->
+  <meta name="author" content="even-so,15219285293@163.com">
+  <link rel="icon" href="favicon.ico">
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <script src="https://map.qq.com/api/gljs?v=1.exp&key=LV3BZ-WAHCF-E57JG-NOOUT-CTG32-UVBXJ"></script>
+<!-- <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.2/??flexible_css.js,flexible.js"></script> -->
 
 <body>
   <noscript>
